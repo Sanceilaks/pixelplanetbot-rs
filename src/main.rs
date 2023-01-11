@@ -1,3 +1,4 @@
+use reqwest::Proxy;
 use websocket::header::{Headers, Cookie, UserAgent};
 
 pub mod pixelplanet;
@@ -15,7 +16,7 @@ async fn main() {
 		.origin("https://pixelplanet.fun".into())
 		.connect(None).expect("Cannot connect with websocket");
 
-	client.writer_mut().write(&pixelplanet::ws::subscribe_to_canvas(pixelplanet::CavasType::Erath)).unwrap();
+	client.writer_mut().write(&pixelplanet::ws::subscribe_to_canvas(pixelplanet::CavasType::Earth)).unwrap();
 	
 	loop {
 		let mut buff = Vec::new();

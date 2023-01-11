@@ -6,7 +6,7 @@ use serde::{Deserialize};
 
 #[derive(Eq, Deserialize, Debug, PartialEq, Hash)]
 pub enum CavasType {
-	Erath = 0
+	Earth = 0
 }
 
 #[derive(Debug, Eq, PartialEq)]
